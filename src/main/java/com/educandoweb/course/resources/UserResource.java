@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 //Ela vai receber requisições HTTP e as respostas devem ser enviadas diretamente no formato JSON
-@RequestMapping(value="/users") // rota da minh api
+@RequestMapping(value="/users") // rota da minha api
 public class UserResource {
     @GetMapping
     //Diz que quando alguém fizer uma requisição do tipo GET

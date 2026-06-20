@@ -13,7 +13,7 @@ import java.util.Arrays;
 @Profile("test")
 public class TestConfig implements CommandLineRunner {
 
-    @Autowired
+    @Autowired // injeção de depedencias
     private UserRepository userRepository;
 
     @Override

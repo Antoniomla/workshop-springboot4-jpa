@@ -27,7 +27,7 @@ public class UserResource {
         return ResponseEntity.ok().body(list);
     }
     @GetMapping(value="/{id}")
-    public ResponseEntity<User> findById(@PathVariable  Long id){
+    public ResponseEntity<User> findById(@PathVariable  Long id) {//extrair valores da url diretamente da requisição
         User obj = userServices.findById(id);
         return  ResponseEntity.ok().body(obj);
     }

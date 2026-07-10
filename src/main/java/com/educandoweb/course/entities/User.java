@@ -11,7 +11,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
-//5 passo serializable
+    //5 passo serializable
     private static final long serialVersionUID = 1L;
 
     //1 passo
@@ -62,7 +62,7 @@ public class User implements Serializable {
     }
 
     public void setId(Long id) {
-        id = id;
+        this.id = id;
     }
 
     public String getName() {

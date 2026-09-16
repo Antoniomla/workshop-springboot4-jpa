@@ -96,10 +96,6 @@ Esses dois casos reforçaram a importância de testar não só o "caminho feliz"
 
 ![400](images/demo-400.png)
 
-**Dados persistidos no H2**
-
-![H2 Console](images/h2-console.png)
-
 ## ▶️ Como executar
 
 ```bash

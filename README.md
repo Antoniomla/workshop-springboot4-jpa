@@ -1,4 +1,4 @@
-# 🛒 Web Services com Spring Boot e JPA/Hibernate | Tratamento de Exceções
+# 🛒 Web Services com Spring Boot e JPA/Hibernate
 
 ![Java](https://img.shields.io/badge/Java_17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
@@ -76,7 +76,7 @@ Durante o desenvolvimento, encontrei e resolvi dois bugs reais de tratamento de 
 1. **`@ExceptionHandler` apontando para o tipo errado** — o handler estava anotado para capturar `DataAccessException` (uma exceção genérica do Spring), mas o código lançava a exceção customizada `DataBaseExceptions`. Como uma não é subtipo da outra, o Spring não reconhecia o handler e a aplicação caía no erro padrão (`500 Internal Server Error`) em vez de retornar `400` com a mensagem certa. Corrigido apontando o `@ExceptionHandler` para a exceção realmente lançada.
 2. **Mudança de comportamento do Spring Data JPA** — em versões mais recentes, `deleteById()` deixou de lançar `EmptyResultDataAccessException` quando o id não existe, então deletar um usuário inexistente retornava `204 No Content` silenciosamente. A solução foi validar a existência do recurso explicitamente com `existsById()` antes de deletar, lançando `ResourceNotFoundException` quando necessário.
 
-Esses dois casos reforçaram a importância de testar não só o "caminho feliz", mas também os cenários de erro — e de entender exatamente o que cada exceção do framework representa antes de tratá-la.
+Esses dois casos reforçaram a importância de testar não só o "caminho feliz", mas também os cenários de erro  e de entender exatamente o que cada exceção do framework representa antes de tratá-la.
 
 ## 🎬 Demonstração dos endpoints
 
@@ -113,11 +113,10 @@ Estudante de Ciência da Computação | Back-end Java
 
 ## 🔭 Possíveis próximos passos
 
-O material do curso também aborda, como etapa opcional, a migração do banco de testes (H2) para **PostgreSQL** e o deploy da aplicação no **Heroku**. Não fiz essa etapa neste projeto, mas é um bom próximo passo para evoluir a aplicação para um ambiente mais próximo de produção.
+Migrar o banco de dados de testes (H2) para PostgreSQL, mais próximo de um ambiente de produção
 
-## 📚 Créditos
+Fazer o deploy da aplicação em um serviço de nuvem (Heroku, Render, Railway, etc.)
 
-Projeto inspirado no módulo *"Web Services com Spring Boot e JPA/Hibernate"*, do curso **"Java COMPLETO Programação Orientada a Objetos + Projetos"** ([Dr. Nélio Alves](https://devsuperior.com.br), Udemy).
+Adicionar autenticação e autorização com Spring Security + JWT
 
----
-*Este repositório contém minha implementação pessoal do projeto, incluindo a resolução de bugs próprios encontrados durante o desenvolvimento (ver seção de tratamento de exceções acima).*
+Escrever testes automatizados (unitários e de integração) para as camadas de serviço e controller
